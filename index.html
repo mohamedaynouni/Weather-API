@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="rainCanvas"></canvas>
+    <header>
+        <div class="logo">🌤️ Weather App</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+    <div class="main">
+        <div class="container">
+            <h1>Weather Search</h1>
+            <input type="text" id="locationInput" placeholder="Enter city or zip code">
+            <button onclick="fetchWeather(true)">Current Weather</button>
+            <button onclick="fetchWeather(false, true)">Next 7 Days </button>
+            <button onclick="fetchWeather(false, false, true)">Last 7 Days</button>
+            <button onclick="resetSearch()">Reset</button>
+            
+        </div>
+        <div id="weatherResult"></div>
+            <!-- Weather Sections with Icons -->
+        <section id="about" class="about-section">
+                <h2>About the Weather App</h2>
+                <p>This Weather App provides real-time weather information for any city around the world. You can check the current weather, as well as forecasts for the next 10 days and the past 10 days. Simply enter a city or zip code, and get detailed weather reports, including temperature, wind speed, and humidity.</p>
+                <p>Our goal is to deliver accurate and easy-to-read weather data to help you plan your day ahead!</p>
+        </section>
+    
+        <div id="weatherSections">
+                <div id="currentWeatherSection" class="weather-section">
+                    <img src="img/weather.png" alt="Current Weather Icon" class="weather-icon">
+                    <h3>Current Weather</h3>
+                    <p>Get the current weather for your location.</p>
+                    <div id="currentWeatherResult"></div>
+                </div>
+                <div id="next7DaysWeatherSection" class="weather-section">
+                    <img src="img/weather.png" alt="Next 7 Days Icon" class="weather-icon">
+                    <h3>Next 7 Days</h3>
+                    <p>See the forecast for the next 7 days.</p>
+                    <div id="next7DaysWeatherResult"></div>
+                </div>
+                <div id="last7DaysWeatherSection" class="weather-section">
+                    <img src="img/weather.png" alt="Last 7 Days Icon" class="weather-icon">
+                    <h3>Last 7 Days</h3>
+                    <p>Review the weather from the last 7 days.</p>
+                    <div id="last10DaysWeatherResult"></div>
+                </div>
+        </div>
+</div>
+    <footer>
+        <p>&copy; 2025 Weather App. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
